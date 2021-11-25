@@ -18,12 +18,15 @@ class LockerController extends Controller
     {
         request()->validate([
             'number' => ['required'],
+            'floorNumber' => ['required']
         ]);
 
         $number = request('number');
+        $floorNumber = request('floorNumber');
 
         $locker = Locker::create([
             'number' => $number,
+            'floorNumber' => $floorNumber
         ]);
 
         return redirect('/locker/manage');

@@ -9,6 +9,7 @@ class Locker extends Model
 {
     protected $fillable = [
         'number',
+        'floorNumber'
     ];
 
     use HasFactory;

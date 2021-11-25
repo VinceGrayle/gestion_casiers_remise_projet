@@ -16,6 +16,7 @@ class CreateLockersTable extends Migration
         Schema::create('lockers', function (Blueprint $table) {
             $table->id();
             $table->string('number');
+            $table->string('floorNumber');         
             $table->timestamps();
         });
     }

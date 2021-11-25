@@ -9,8 +9,10 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Numéro du casier</th>
+                <th scope="col">Numéro d'étage</th>          
                 <th scope="col">Date de création</th>
                 <th scope="col">Date de dernière modification</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -18,12 +20,12 @@
             <tr>
                 <th scope="row">{{$loop->iteration}}</th>
                 <td>{{$locker->number}}</td>
+                <td>{{$locker->floorNumber}}</td>
                 <td>{{$locker->created_at}}</td>
                 <td>{{$locker->updated_at}}</td>
+                <td>{{$locker->id}}</td>
             </tr>
             @endforeach
-
-
         </tbody>
     </table>
 </div>

@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/student/create', function () {
+    return view('student/create-student');
+});
+
+Route::post('/student/create', [SutdentController::class, 'create']);
+
 Route::get('/locker/create', function () {
     return view('locker/create-locker');
 });

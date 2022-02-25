@@ -6,6 +6,7 @@
     <form action="/locker/create" method="post">
         {{ csrf_field() }}
         <div class="mb-3">
+
             <div>
                 <label for="number" class="form-label">Numéro</label>
                 <input type="text" class="form-control" id="number" name="number" placeholder="Numéro du casier" value="{{ old('number') }}">

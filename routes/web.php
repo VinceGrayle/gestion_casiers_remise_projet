@@ -28,4 +28,6 @@ Route::get('/locker/create', function () {
     return view('locker/create-locker');
 });
 Route::post('/locker/create', [LockerController::class, 'create']);
+Route::get('/locker/delete/id', [LockerController::class, 'delete']);
 Route::get('/locker/manage', [LockerController::class, 'get_all']);
+

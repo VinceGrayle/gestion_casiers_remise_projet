@@ -1,4 +1,9 @@
 <?php
+//Auteur : Vincenzo Di Fonte
+//Classe : CIN4A
+//ETML : École Technique des Métiers de Lausanne
+//Description de la page :  Table de migration pour le modèle students. Cette page est destinée à la création des champs de la table student
+// 
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -14,11 +19,11 @@ class CreateStudentsTable extends Migration
     public function up()
     {
         Schema::create('students', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->timestamps();
-            $table->string('firstname');
-            $table->string('lastname');
-            $table->string('class');
+            $table->string('nom');
+            $table->string('prenom');
+            $table->string('classe');
         });
     }
 

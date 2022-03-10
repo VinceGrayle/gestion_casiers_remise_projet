@@ -1,36 +1,35 @@
+{{--
+Auteur : Vincenzo Di Fonte
+Classe : CIN4A
+ETML : École Technique des Métiers de Lausanne
+Description de la page :  Cette page est le template app.blade.php qui contient la structure html de chaque page de l'application
+                          ainsi que le menu de navigation
+--}}
+
 <!doctype html>
 <html>
 
 <head>
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- fichier css -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
 
     <div class="container">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <!-- Brand -->
-            <a class="navbar-brand" href="/">GESTCasiers</a>
-            <!-- Links -->
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Louer un casier</a>
-                </li>
-                <!-- Dropdown -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                        Casier
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/locker/manage">Gérer les casiers</a>
-                        <a class="dropdown-item" href="/locker/create">Créer un nouveau casier</a>
-                    </div>
-                </li>
+        {{--Barre de navigation--}}
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                 <li class="nav-item active">  <a class="navbar-brand" href="/"> Accueil</a></li>
+                <li class="nav-item active"><a class="navbar-brand" href={{route('students.add')}}>Ajouter élève</a></li>
+                <li class="nav-item active">  <a class="navbar-brand" href="/locker/create">Ajouter un casier</a></li>
+                <li class="nav-item active">  <a class="navbar-brand" href="/all-students">Liste des élèves</a></li>
+                <li class="nav-item active">  <a class="navbar-brand" href="/all-lockers">Liste des casiers</a></li>
+  
             </ul>
+            <h1 class="logoGestCas"> GESTION DE CASIERS</h1>
+            <input type="text" class="form-control col-md-4 float-left" name="search" id="search" placeholder="Rechercher...">
         </nav>
 
         @yield('content')
